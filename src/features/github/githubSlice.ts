@@ -16,7 +16,7 @@ const initialState: GitHubState = {
 
 export const fetchGitHubData = createAsyncThunk(
   'github/fetchGitHubData',
-  async (username: string, thunkAPI) => {
+  async (username: string, _thunkAPI) => {
     const userRes = await fetch(`https://api.github.com/users/${username}`);
     if (!userRes.ok) throw new Error('User not found');
     const user = await userRes.json();
